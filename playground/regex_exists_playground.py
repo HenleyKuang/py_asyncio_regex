@@ -3,7 +3,7 @@ import asyncio
 import logging
 import random
 
-from py_asyncio_regex.regex_exists import regex_exists
+from py_asyncio_regex.regex_exists import async_regex_exists
 
 LOGGER = logging.getLogger(__name__)
 
@@ -11,7 +11,7 @@ LOGGER = logging.getLogger(__name__)
 async def regex_exists_with_sleep(task_id, regex_pattern, string_value):
     random_int = random.randint(1, 10)
     await asyncio.sleep(random_int)
-    return await regex_exists(regex_pattern, string_value), task_id, random_int
+    return await async_regex_exists(regex_pattern, string_value), task_id, random_int
 
 
 def _parse_args():
